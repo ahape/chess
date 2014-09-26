@@ -1,0 +1,100 @@
+body {
+    background-color: powderblue;
+}
+div, h3, table {
+    position: absolute;
+}
+
+div#content-wrapper {
+    top: 25px;
+    left: 50%;
+    width: 800px;
+    height: 500px;
+    margin-left: -400px; /* center hack */
+}
+div#moves-list {
+    top: 70px;
+    left: 20px;
+    width: 260px;
+    height: 390px;
+    overflow-y: auto;
+}
+div#moves-list > span {
+    display: block;
+}
+div#scoreboard {
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 485px;
+    border-radius: 20px;
+    background: rgba(172, 164, 164, 0.4);
+    box-sizing: content-box;
+    font-family: "Lucida Sans Unicode";
+}
+div#scores {
+    top: 20px;
+    right: 0;
+    left: 0;
+    height: 30px;
+}
+h3 {
+    display: inline-block;
+    top: 0;
+    width: 43%;
+    height: 100%;
+    margin: 0 0 15px 0;
+    text-align: center;
+    border-bottom: 1px solid azure;
+}
+h3.team-1 { left: 20px; }
+h3.team-2 { right: 20px; }
+
+table#chessboard {
+    top: 0;
+    left: 0;
+    border-collapse: collapse;
+    border: 2px solid azure;
+    box-shadow: 5px 5px 15px darkgray;
+}
+td {
+    width: 58px;
+    height: 58px;
+    background-color: antiquewhite;
+    font-family: "Lobster", cursive;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+td.legal-move:hover {
+    background-color: palegreen !important;
+}
+td.selected > span {
+    border-bottom: 4px solid chartreuse;
+}
+
+/* tr:nth-child(odd) > td:nth-child(odd) {
+    background-color: darksalmon;
+}
+tr:nth-child(even) > td:nth-child(even) {
+    background-color: darksalmon;
+} */
+
+/* Chose this way in styling checkers since IE7 doesn't support the pseudo-class `nth-child` */
+tr.checker-pattern-1 > td:first-child { background-color: darksalmon; }
+tr.checker-pattern-1 > td:first-child + td + td { background-color: darksalmon; }
+tr.checker-pattern-1 > td:first-child + td + td + td + td { background-color: darksalmon; }
+tr.checker-pattern-1 > td:first-child + td + td + td + td + td + td { background-color: darksalmon; }
+tr.checker-pattern-2 > td:first-child + td { background-color: darksalmon; }
+tr.checker-pattern-2 > td:first-child + td + td + td { background-color: darksalmon; }
+tr.checker-pattern-2 > td:first-child + td + td + td + td + td { background-color: darksalmon; }
+tr.checker-pattern-2 > td:first-child + td + td + td + td + td + td + td { background-color: darksalmon; }
+
+.team-2 {
+    color: deeppink;
+}
+.team-1 {
+    color: midnightblue;
+}
